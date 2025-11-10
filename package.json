@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "name": "riatc-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.0",
+    "cors": "^2.8.5"
+  }
+}
