@@ -2,10 +2,11 @@
   "type": "module",
   "name": "riatc-api",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "api/index.js",
   "license": "MIT",
   "dependencies": {
     "express": "^4.19.0",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "serverless-http": "^3.2.0"
   }
 }
