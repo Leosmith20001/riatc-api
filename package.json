@@ -6,7 +6,6 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.19.0",
-    "cors": "^2.8.5",
-    "serverless-http": "^3.2.0"
+    "cors": "^2.8.5"
   }
 }

@@ -1,26 +1,34 @@
+// api/index.js
 import express from "express";
 import cors from "cors";
-import serverless from "serverless-http";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+// --- In-memory pilot counter ---
 let pilotsOnline = 0;
 
+// --- API routes ---
 app.get("/api/pilots", (req, res) => {
-  res.status(200).json({ pilotsOnline });
+  return res.status(200).json({ pilotsOnline });
 });
 
 app.post("/api/connect", (req, res) => {
   pilotsOnline++;
-  res.status(200).json({ message: "Pilot connected", pilotsOnline });
+  return res.status(200).json({
+    message: "Pilot connected",
+    pilotsOnline
+  });
 });
 
 app.post("/api/disconnect", (req, res) => {
   if (pilotsOnline > 0) pilotsOnline--;
-  res.status(200).json({ message: "Pilot disconnected", pilotsOnline });
+  return res.status(200).json({
+    message: "Pilot disconnected",
+    pilotsOnline
+  });
 });
 
-// This line is crucial for Vercel
-export default serverless(app);
+// --- Export handler for Vercel ---
+export default app;
